@@ -1,10 +1,14 @@
 import React from 'react';
+import Header from './components/Header';
+
+const nftAddress = ""
+const nftMarketAddress = ""
 
 function App() {
   return (
-    <div className="text-center">
-      Hello World
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
