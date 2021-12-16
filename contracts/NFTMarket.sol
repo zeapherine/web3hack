@@ -97,6 +97,7 @@ contract NFTMarket is ReentrancyGuard {
         idToMarketItem[itemId].sold = true;
         _itemsSold.increment();
         payable(owner).transfer(listingPrice);
+        console.log(" %c New owner  :::::::", idToMarketItem[itemId].owner , 'background: #222; color: #bada55');
     }
   
     /* Returns all unsold market items */
@@ -117,6 +118,8 @@ contract NFTMarket is ReentrancyGuard {
         return items;
     }
 
+    
+
     /* Returns only items that a user has purchased */
     function fetchMyNFTs() public view returns (MarketItem[] memory) {
         uint totalItemCount = _itemIds.current();
@@ -133,7 +136,7 @@ contract NFTMarket is ReentrancyGuard {
         for (uint i = 0; i < totalItemCount; i++) {
             if (idToMarketItem[i + 1].owner == msg.sender) {
                 uint currentId = i + 1;
-                MarketItem storage currentItem = idToMarketItem[currentId];
+                MarketItem memory currentItem = idToMarketItem[currentId];
                 items[currentIndex] = currentItem;
                 currentIndex += 1;
             }
