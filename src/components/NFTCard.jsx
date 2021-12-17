@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaEthereum } from 'react-icons/fa';
+import { MdOutlinePolymer } from 'react-icons/md';
 
 const NFTCard = ({ nft, buyNft }) => {
+	const [isLoading, setIsLoading] = useState(false);
 	return (
 		<figure className=' rounded-3xl h-auto w-64 bg-slate-700 m-4'>
 			<img
@@ -18,10 +20,15 @@ const NFTCard = ({ nft, buyNft }) => {
 				>
 					Buy
 				</button>
-				<h6 className='text-white text-lg p-2 flex justify-evenly'>
-					{' '}
-					{nft.price} <FaEthereum />
-				</h6>
+				<div className='flex justify-center items-center text-purple-500 mr-2'>
+					<h6 className='text-white text-lg p-2 flex justify-evenly'>
+						{' '}
+						{nft.price}
+					</h6>
+					<div className='rotate-45'>
+						<MdOutlinePolymer />
+					</div>
+				</div>
 			</div>
 		</figure>
 	);

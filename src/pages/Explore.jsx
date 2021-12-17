@@ -6,7 +6,7 @@ import NFTCard from '../components/NFTCard';
 const Explore = ({ nfts, loadingState, buyNft }) => {
 	const [activeTab, setActiveTab] = useState('1');
 	return (
-		<div className='flex flex-col p-2'>
+		<div className='flex flex-col p-2 '>
 			<div className='pt-44'>
 				<h2 className='text-5xl font-extrabold text-white'>
 					Explore Collections{' '}
@@ -34,7 +34,7 @@ const Explore = ({ nfts, loadingState, buyNft }) => {
 				</div>
 
 				{activeTab === '1' ? (
-					<div>
+					<div className='h-screen'>
 						<h1 className='text-3xl text-center my-10 font-bold text-yellow-50'>
 							Explore Marketplace
 						</h1>
@@ -45,8 +45,8 @@ const Explore = ({ nfts, loadingState, buyNft }) => {
 						</div>
 					</div>
 				) : (
-					<div>
-						<MyCollections  />
+					<div className='h-screen'>
+						<MyCollections />
 					</div>
 				)}
 			</div>

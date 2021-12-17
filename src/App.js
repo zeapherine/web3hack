@@ -25,16 +25,21 @@ function App() {
 	}, []);
 
 	async function loadNFTs() {
-		const provider = new ethers.providers.JsonRpcProvider();
+		/* create a generic provider and query for unsold market items */
+		const provider = new ethers.providers.JsonRpcProvider(
+			'https://rpc-mumbai.maticvigil.com'
+		);
 		const tokenContract = new ethers.Contract(nftAddress, NFT.abi, provider);
 		const marketContract = new ethers.Contract(
 			nftMarketAddress,
 			NFTMarket.abi,
 			provider
 		);
-
 		const data = await marketContract.fetchMarketItems();
-
+		/*
+		 *  map over items returned from smart contract and format
+		 *  them as well as fetch their token metadata
+		 */
 		const items = await Promise.all(
 			data.map(async (i) => {
 				const tokenUri = await tokenContract.tokenURI(i.tokenId);
@@ -83,8 +88,8 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<div className='bg-slate-600  font-josefin box-border '>
-				<div className=' max-w-screen-2xl  content-center  mx-auto'>
+			<div className='bg-slate-600  font-josefin box-border w-screen '>
+				<div className=' max-w-screen-2xl  content-center  mx-auto '>
 					<Header />
 					<Routes>
 						<Route
