@@ -34,7 +34,7 @@ const Explore = ({ nfts, loadingState, buyNft }) => {
 				</div>
 
 				{activeTab === '1' ? (
-					<div className=''>
+					<div className='h-screen'>
 						<h1 className='text-3xl text-center my-10 font-bold text-yellow-50'>
 							Explore Marketplace
 						</h1>
