@@ -15,6 +15,7 @@ import Web3Modal from 'web3modal';
 
 import NFT from './artifacts/contracts/NFT.sol/NFT.json';
 import NFTMarket from './artifacts/contracts/NFTMarket.sol/NFTMarket.json';
+import LoadingSvg from './components/loading/LoadingSvg.jsx';
 
 function App() {
 	const [nfts, setNfts] = useState([]);

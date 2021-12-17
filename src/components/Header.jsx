@@ -79,8 +79,8 @@ const Header = () => {
 		<div
 			className={
 				isScrolled
-					? ' bg-slate-700 flex items-center justify-between  py-4 text-white fixed top-0 left-0 right-0 p-3  '
-					: 'flex items-center bg-slate-600 justify-between  py-4 text-white fixed top-0 left-0 right-0 p-3 '
+					? ' bg-slate-700 flex items-center justify-between  py-4 text-white fixed top-0 left-0 right-0 p-3 z-50 '
+					: 'flex items-center bg-slate-600 justify-between  py-4 text-white fixed top-0 left-0 right-0 p-3 z-50 '
 			}
 		>
 			<Link to='/' className='text-4xl font-bold'>
