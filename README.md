@@ -1,6 +1,8 @@
 # Web3Hack HACKATHON
 
-This project is an NFT marketplace. A project submitted to web3Hack Hackathon
+This project is an NFT marketplace. A project submitted to web3Hack Hackathon.
+
+### Network : Polygon Mumbai Testnet
 
 
 Try running some of the following tasks:
